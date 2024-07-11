@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { fetchUserPosts, fetchUserTodos } from "./userActions"; // Agrega estas acciones si aún no existen
-import UserPosts from "./UserPosts";
-import UserTodos from "./UserTodos";
+import { fetchUserPosts, fetchUserTodos } from "../../app/actions/userActions"; // Agrega estas acciones si aún no existen
+import UserPosts from "../UserPosts/UserPosts";
+import UserTodos from "../UserTodos/UserTodos";
 import UserDetailsTable from "./userDetailsTable";
 import { Container, Grid, Button } from "@mui/material";
 
@@ -40,7 +40,7 @@ const UserDetail = () => {
 
   return (
     <Container>
-      <Grid container spacing={3}>
+      <Grid container spacing={3} sx={{ height: "100%", width: "100%" }}>
         <Grid item xs={12}>
           <h2>User Details</h2>
           <UserDetailsTable user={selectedUser} />
@@ -71,12 +71,19 @@ const UserDetail = () => {
             Get Todos
           </Button>
         </Grid>
+      </Grid>
+      <Grid
+        container
+        sx={{
+          paddingTop: 3, // Añadir padding alrededor del contenido
+        }}
+      >
         <Grid
           item
           xs={12}
           sx={{
             maxHeight: "60vh", // Altura máxima
-            overflowY: "auto", // Scroll vertical si es necesario
+            // overflowY: "auto", // Scroll vertical si es necesario
             flexGrow: 1, // Ocupa todo el espacio disponible
             display: displaySection === "posts" ? "block" : "none", // Mostrar solo si se selecciona la sección de posts
           }}
@@ -89,7 +96,7 @@ const UserDetail = () => {
           xs={12}
           sx={{
             maxHeight: "60vh", // Altura máxima
-            overflowY: "auto", // Scroll vertical si es necesario
+            // overflowY: "auto", // Scroll vertical si es necesario
             flexGrow: 1, // Ocupa todo el espacio disponible
             display: displaySection === "todos" ? "block" : "none", // Mostrar solo si se selecciona la sección de todos
           }}

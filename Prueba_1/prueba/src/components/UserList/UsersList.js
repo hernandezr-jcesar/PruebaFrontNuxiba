@@ -4,8 +4,8 @@ import List from "@mui/material/List";
 
 import ListItem from "@mui/material/ListItem";
 import { useSelector, useDispatch } from "react-redux";
-import { fetchUsers, selectUser } from "./usersSlice";
-import UserDetail from "./UserDetail";
+import { fetchUsers, selectUser } from "../../app/reducers/usersSlice";
+import UserDetail from "../UserDetail/UserDetail";
 
 const UsersList = () => {
   const dispatch = useDispatch();

@@ -1,4 +1,4 @@
-import UsersList from "./features/users/UsersList";
+import UsersList from "./components/UserList/UsersList";
 import "./App.css";
 
 function App() {

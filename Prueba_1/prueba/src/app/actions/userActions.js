@@ -18,6 +18,7 @@ export const fetchUserPosts = createAsyncThunk(
         return { ...post, comments };
       })
     );
+    console.log(postsWithComments);
     return postsWithComments;
   }
 );

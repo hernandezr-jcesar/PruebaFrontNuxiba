@@ -1,6 +1,6 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
-import { fetchUserPosts, fetchUserTodos } from "./userActions"; // Importa las nuevas acciones
+import { fetchUserPosts, fetchUserTodos } from "../actions/userActions"; // Importa las nuevas acciones
 
 export const fetchUsers = createAsyncThunk("users/fetchUsers", async () => {
   const response = await axios.get(
